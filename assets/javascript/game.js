@@ -8,8 +8,8 @@ let $wins = document.getElementById('wins')
 $wins.innerText = 0
 let $losses = document.getElementById('losses')
 $losses.innerText = 0
-// let foodBank = ["DOLE WHIP", "DIPPING DOTS", "CORN DOG", "FRIED TWINKIES", "CHEESE FRIES", "SLUSHIE", "CHICKEN TENDERS"]
-let foodBank = ["cheese", "apple", "orange", "bi"]
+
+let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "cheese fries", "slushie", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
 let letters = []
