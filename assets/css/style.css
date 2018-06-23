@@ -1,0 +1,21 @@
+.jumbotron-fluid {
+    /* background-color: green; */
+    background-image: url("../images/mickey-minnie-mouse-straws.jpg");
+    background-size: 100% 100%;
+    height: 400px;
+}
+
+#newGameButton {
+    
+}
+
+/* .body {
+    width: 960px;
+} */
+
+.container-fluid {
+    background-color: aquamarine;
+    border-style: solid;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+}

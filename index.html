@@ -2,26 +2,57 @@
 <html lang="en-us">
 
 <head>
-    
-    <title>Feed The Hangryman</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Dokdo|Fredericka+the+Great|Gaegu|Gloria+Hallelujah|Homemade+Apple|Markazi+Text|Sacramento" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+
+    <title>Hangry Disney</title>
 </head>
 
 <body>
+    <div class="container text-center">
+        <h1>Feed The Hangryman Disney Cast!</h1> <br>
+    
+    <div class= "jumbotron-fluid background">
+        <button id="newGameButton" class="btn btn-large">
+                <strong>New Game</strong>
+            <i class="fas fa-gamepad fa-2x"></i>
+        </button>
+    </div>
+    </div>
 
+    <br>
+
+    <div class="container-fluid py-5 text-center game">
+        <div class="row">
+            <div class="col-6 col-md-6 my-3">
+            <p>Guess the Word <br> <span id="placeholders"></span></p>
+            </div>
+            <div class="col-6 col-md-6 my-3">
+            <p>Letters Guessed <br> <span id="lettersGuessed"</span></p>
+            </div>
+        </div>
+    </div>   
+    <br>
+    <div class="container-fluid py-5 text-center counter">
+        <div class="row">
+            <div class="col-4 col-md-4 my-3">
+            <p>Remaining Lives: <span id="livesCount"</span></p>
+            </div>
+            <div class="col-4 col-md-4 my-3">
+            <p>Wins: <span id="wins"</span></p>
+            </div>
+            <div class="col-4 col-md-4 my-3">
+            <p>Losses: <span id="losses"</span></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
 
-
-1. Food Bank Words (Create Disneyland Theme Park Foods Bookmarked)
-2. Function to randomly choose hangman word
-3. Set player lives
-4. Array of guessed letters
-5. ______ = game word (DISPLAY) &  ______ = incorrectly guessed
-6. Function onkey to see user selection
-7. Function to check if selection is a letter from 'A-Z'
-8. Error message if anything but 'A-Z' is typed
-9. Link to recipes if player wins
-10. Display the food item photo when guessed correctly
-11. Link to Cooking Mama game
-12. 
