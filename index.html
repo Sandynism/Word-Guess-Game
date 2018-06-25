@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gaegu|Gloria+Hallelujah|Homemade+Apple|Markazi+Text|Sacramento|Old+Standard+TT" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gaegu|Homemade+Apple|Sacramento|Gloria+Hallelujah|Markazi+Text|Old+Standard+TT" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 
@@ -15,7 +15,7 @@
 <!-- Nav Bar -->
 <div class="navbar navbar-light bg-light">
     <h1 class="display-4">When you wish upon a shake...</h1>
-    <button id="resetButton" class="btn btn-lg btn-outline-info gamePage"><i class="fas fa-gamepad fa-2x"></i></button>
+    <button id="resetButton" class="btn btn-lg btn-outline-info gamePage disappear"><i class="fas fa-gamepad fa-2x"></i></button>
 </div>
 
 <div class="wlCounter">
@@ -41,7 +41,7 @@
 
 
 <!-- Page 2 -->
-<div class="container gamePage">
+<div class="container gamePage disappear">
     <div class="row">
 
         <!-- LEFT SIDE blank letters && the letter blocks-->
@@ -62,25 +62,32 @@
                     <div class="card">
                         <div class="card-header">Available Letters (Type to Play!)</div>
                         <div id="alphabetBlocks" class="card-body">
-                            <!-- ADD THE REST OF THE LETTERS HERE -->
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
-                            <div id="a">A</div>
-                            <div id="b">B</div>
-                            <div id="c">C</div>
+                            <div id="a">a</div>
+                            <div id="b">b</div>
+                            <div id="c">c</div>
+                            <div id="d">d</div>
+                            <div id="e">e</div>
+                            <div id="f">f</div>
+                            <div id="g">g</div>
+                            <div id="h">h</div>
+                            <div id="i">i</div>
+                            <div id="j">j</div>
+                            <div id="k">k</div>
+                            <div id="l">l</div>
+                            <div id="m">m</div>
+                            <div id="n">n</div>
+                            <div id="o">o</div>
+                            <div id="p">p</div>
+                            <div id="q">q</div>
+                            <div id="r">r</div>
+                            <div id="s">s</div>
+                            <div id="t">t</div>
+                            <div id="u">u</div>
+                            <div id="v">v</div>
+                            <div id="w">w</div>
+                            <div id="x">x</div>
+                            <div id="y">y</div>
+                            <div id="z">z</div>
                         </div>
                     </div>
                 </div>
@@ -88,7 +95,7 @@
         </div>
         <!-- RIGHT SIDE - Hang img -->
         <div class="col-4 hangImgDiv">
-            <img src="assets/images/2-donald.jpg" alt="Hangman Img" class="img-fluid">
+            <img src="assets/images/1-tigger.jpg" alt="Hangman Img" class="img-fluid">
             <div class="livesCounter">
                 <h4>Remaining Lives: <span id="livesCount"></span></h4>
             </div>
@@ -97,8 +104,9 @@
 
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/javascript/game.js"></script>
+
 
     <script>
 

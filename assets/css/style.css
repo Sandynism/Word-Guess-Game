@@ -1,8 +1,4 @@
-.introPage {
-    display: block;
-}
-
-.gamePage {
+.disappear {
     display: none;
 }
 
@@ -14,8 +10,11 @@ body {
 
 .jumbotron-fluid {
     background-image: url("../images/mickey-minnie-mouse-straws.jpg");
-    background-size: 100% 100%;
-    height: 400px;
+    /* background-size: 100% 100%; */
+    height: 300px;
+    width: 600px;
+    background-size: cover;
+    margin: 0 auto;
     /* position: relative; */
 }
 
@@ -84,13 +83,26 @@ body {
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 15px
+    bottom: 15px;
+    font-family: "Homemade Apple";
 }
 
 
 /* 2 cards next to hangman */
 .card {
     margin: 20px auto;
+}
+.card-header {
+    font-family: "Gaegu";
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.card-body {
+    font-family: "Fredericka the Great";
+    letter-spacing: 5px;
+    font-size: 50px;
+    margin: 0 auto;
 }
 
 #alphabetBlocks div {
