@@ -8,7 +8,7 @@ $wins.innerText = 0
 let $losses = document.getElementById('losses')
 $losses.innerText = 0
 
-let foodBank = ["cheese"]
+let foodBank = ["dole whip"]
 // let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "cheese fries", "slushie", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
@@ -26,7 +26,7 @@ $newGameButton.addEventListener('click', () => {
 
 })
 
-
+//
 function hideString(foodString, array) {
     let finalWord = ""
     for (let i = 0; i < foodString.length; i++) {
@@ -95,7 +95,14 @@ document.addEventListener("keyup", (event) => {
 
 // function endGame()
 
-//add thing that shows spaces as empty space and not #
-//restart new game if player won or if lives are at 0
-//
+// reset game functions need to be added
+// restart new game if player won or if lives are at 0
 
+
+// <script>
+// $newGameButton.addEventListener("click", myFunction);
+
+// function newGame() {
+//     brings to game
+// }
+// </script>

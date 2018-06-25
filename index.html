@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Dokdo|Fredericka+the+Great|Gaegu|Gloria+Hallelujah|Homemade+Apple|Markazi+Text|Sacramento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gaegu|Gloria+Hallelujah|Homemade+Apple|Markazi+Text|Sacramento|Old+Standard+TT" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 
@@ -12,20 +12,104 @@
 </head>
 
 <body>
-    <div class="container text-center">
-        <h1>Feed The Hangryman</h1> <br>
-    
-    <!-- <div class= "jumbotron-fluid background">  add picture back-->
-        <button id="newGameButton" class="btn btn-large">
-                <strong>New Game</strong>
-            <i class="fas fa-gamepad fa-2x"></i>
-        </button>
+<!-- Nav Bar -->
+<div class="navbar navbar-light bg-light">
+    <h1 class="display-4">When you wish upon a shake...</h1>
+    <button id="resetButton" class="btn btn-lg btn-outline-info gamePage"><i class="fas fa-gamepad fa-2x"></i></button>
+</div>
+
+<div class="wlCounter">
+    <div class="row">
+        <div class="col-6 my-2">
+            <p>Wins: <span id="wins"></span></p>
+        </div>
+
+        <div class="col-6 my-2">
+            <p>Losses: <span id="losses"></span></p>
+        </div>
     </div>
+</div>
+
+
+<!-- Page 1 -->
+<div class="container introPage">
+    <div id="newGameButton" class= "jumbotron-fluid background"></div>
+</div>
+
+
+
+
+
+<!-- Page 2 -->
+<div class="container gamePage">
+    <div class="row">
+
+        <!-- LEFT SIDE blank letters && the letter blocks-->
+        <div class="col-8">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">Guess the Word</div>
+                        <div class="card-body">
+                            <!-- WORD GOES HERE -->
+                            <span id="placeholders"></span>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">Available Letters (Type to Play!)</div>
+                        <div id="alphabetBlocks" class="card-body">
+                            <!-- ADD THE REST OF THE LETTERS HERE -->
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                            <div id="a">A</div>
+                            <div id="b">B</div>
+                            <div id="c">C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RIGHT SIDE - Hang img -->
+        <div class="col-4 hangImgDiv">
+            <img src="assets/images/2-donald.jpg" alt="Hangman Img" class="img-fluid">
+            <div class="livesCounter">
+                <h4>Remaining Lives: <span id="livesCount"></span></h4>
+            </div>
+        </div>
     </div>
 
-    <br>
+</div>
 
-    <div class="container-fluid py-5 text-center disneyFood">
+
+<script src="assets/javascript/game.js"></script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+<div class="container-fluid py-5 text-center disneyFood gamePage">
         <div class="row">
             <div class="col-12 col-md-12 my-3">
             <p>Guess the Word <br> <span id="placeholders"></span></p>
@@ -40,8 +124,8 @@
                 </div>
         </div>
     </div>
-    <br>
-    <div class="container-fluid py-5 text-center counter">
+    <br> 
+     <div class="container-fluid py-5 text-center counter">
         <div class="row">
             <div class="col-4 col-md-4 my-3">
             <p>Remaining Lives: <span id="livesCount"</span></p>
@@ -53,11 +137,4 @@
             <p>Losses: <span id="losses"</span></p>
             </div>
         </div>
-    </div>
-    
-
-    <script src="assets/javascript/game.js"></script>
-</body>
-
-</html>
-
+    </div> -->
