@@ -18,26 +18,6 @@ let $gamePage = document.getElementById('gamePage')
 let $introPage = document.getElementById('introPage')
 let $resetButton = document.getElementById('resetButton')
 
-// function gameStart() {
-//     if ($newGameButton.clicked === true) {
-//         $introPage.style.display = "none";
-//         $gamePage.style.display = "block"; 
-//     } else {
-//         $gamePage.style.display = "none";
-//     }
-// }
-
-// $newGameButton.onclick = function() {
-//     $gamePage.style.display = "block";
-// }
-// let audio = new Audio("Jiminy-Cricket.mp3")
-// audio.play()
-// $(".myAudio").trigger('load');
-// let audio = document.getElementById('myAudio')
-// function enableAutoPlay() {
-// audio.autoplay= true
-// audio.load();
-// }
 
 $(document).ready(function () {
     $("#newGameButton").click(function () {
@@ -58,6 +38,8 @@ function startGame() {
 
 $newGameButton.addEventListener('click', () => {
     startGame()
+    let audio = new Audio("assets/audio/jiminycricket.mp3")
+    audio.play()
 })
 
 $resetButton.addEventListener('click', () => {

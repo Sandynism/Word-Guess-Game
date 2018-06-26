@@ -24,10 +24,14 @@ body {
     margin: 0 auto;
     font-family: "Sacramento";
     font-size: 60px;
-    letter-spacing: 1px;
-    /* color: skyblue; */
-   
+    letter-spacing: 1px;  
 }
+
+.hints {
+    text-align: center;
+    font-family: "Gloria Hallelujah";
+    font-size: 30px;
+}   
 
 .container {
     /* width: 90%; */
