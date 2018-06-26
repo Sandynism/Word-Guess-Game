@@ -72,7 +72,7 @@ function checkUserInput(input) {
         letters.push(lowerInput)
     } else if (validLetter && letters.includes(lowerInput)) {
         alert('Choose another letter!')
-        //play a buzzer sound?
+        //remove alert after blocks work
     }
 
     if (validLetter && !currentFoodItem.toLowerCase().includes(lowerInput)) {
@@ -103,12 +103,12 @@ function checkGameStatus() {
     }
 }
 
-// function changeImgDiv() {
-//     if ($livesCount.innerHTML === "7") {
-//         var image = document.getElementsByClassName("hangImgDiv");
-//         image.src = "assets/images/2-";
-//     }
-// }
+function changeImgDiv() {
+    if ($livesCount.innerHTML === "7") {
+        var image = document.getElementsById("disneyImg");
+        image.src = "assets/images/2-donald.jpg";
+    }
+}
 
 document.addEventListener("keyup", (event) => {
 
