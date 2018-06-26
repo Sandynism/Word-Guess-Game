@@ -6,6 +6,7 @@ body {
     background-image: url("../images/tsumtsum_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 20px;
 }
 
 .jumbotron-fluid {
@@ -24,6 +25,8 @@ body {
     font-family: "Sacramento";
     font-size: 60px;
     letter-spacing: 1px;
+    /* color: skyblue; */
+   
 }
 
 .container {
@@ -36,7 +39,8 @@ body {
     top: 20%; */
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    margin-top: 10px;
+    border-radius: 15px;
+    /* margin-top: 10px; */
     font-family: "Gaegu";
     font-size: 35px;
     letter-spacing: 2px;
@@ -92,6 +96,7 @@ body {
 .card {
     margin: 20px auto;
 }
+
 .card-header {
     font-family: "Gaegu";
     font-size: 25px;
@@ -117,4 +122,5 @@ body {
     float: left;
     text-align: center;
     box-sizing: border-box;
+    background-color: skyblue;
 }

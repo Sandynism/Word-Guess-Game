@@ -30,36 +30,39 @@ let $resetButton = document.getElementById('resetButton')
 // $newGameButton.onclick = function() {
 //     $gamePage.style.display = "block";
 // }
+// let audio = new Audio("Jiminy-Cricket.mp3")
+// audio.play()
+// $(".myAudio").trigger('load');
+// let audio = document.getElementById('myAudio')
+// function enableAutoPlay() {
+// audio.autoplay= true
+// audio.load();
+// }
+
 $(document).ready(function () {
     $("#newGameButton").click(function () {
         $(".introPage").addClass("disappear")
-        $(".gamePage").removeClass("disappear")
+        $(".gamePage").removeClass("disappear") //make the counter disappear too
     })
 })
 
-// new game
+// New game
 function startGame() {
     letters = [];
     currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
     $livesCount.innerText = 8
     $word.innerText = hideString(currentFoodItem, letters)
-    $lettersGuessed.innerText = ""
+    // $lettersGuessed.innerText = ""
 }
 
 $newGameButton.addEventListener('click', () => {
-    // letters = [];
-    // currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
-
-    // $livesCount.innerText = 8
-    // $word.innerText = hideString(currentFoodItem, letters)
-    // $lettersGuessed.innerText = ""
     startGame()
 })
 
 $resetButton.addEventListener('click', () => {
-    $wins.innerText= 0
-    $losses.innerText= 0
+    $wins.innerText = 0
+    $losses.innerText = 0
     $livesCount.innerText = 8
     startGame()
 })
@@ -86,7 +89,8 @@ function checkUserInput(input) {
     if (validLetter && !letters.includes(lowerInput)) {
         letters.push(lowerInput)
     } else if (validLetter && letters.includes(lowerInput)) {
-        alert('Letter already guessed')
+        alert('Choose another letter!')
+        //play a buzzer sound?
     }
 
     if (validLetter && !currentFoodItem.toLowerCase().includes(lowerInput)) {
@@ -105,13 +109,24 @@ function checkWinner(string, array) {
 
 function checkGameStatus() {
     if ($livesCount.innerHTML === "0") {
-        $losses.innerText = parseInt($losses.innerText) + 1//change to reset game
+        $losses.innerText = parseInt($losses.innerText) + 1
+        alert("Womp Womp, You Lose! Play Again!") //need to make it go to 0 lives first
+        startGame()
     }
 
     if (checkWinner(currentFoodItem, letters)) {
-        $wins.innerText = parseInt($wins.innerText) + 1
+        $wins.innerText = parseInt($wins.innerText) + 1//how to check if word is complete?
+        alert("Woohoo, You Won!")
+        startGame()
     }
 }
+
+// function changeImgDiv() {
+//     if ($livesCount.innerHTML === "7") {
+//         var image = document.getElementsByClassName("hangImgDiv");
+//         image.src = "assets/images/2-";
+//     }
+// }
 
 document.addEventListener("keyup", (event) => {
 
@@ -119,20 +134,16 @@ document.addEventListener("keyup", (event) => {
     checkGameStatus()
     $word.innerText = hideString(currentFoodItem, letters)
 
-    // $lettersGuessed.innerText = letters.join(", ")
+    for (let i = 0; i < 26; i++) {
+        if (event.key === document.getElementById(`${i}`)) {
+            document.getElementById(`${i}`).style.opacity = ".5";
+        }
+    }
 
 })
 
 // function endGame()
-
-// reset game functions need to be added
 // restart new game if player won or if lives are at 0
-
-
-// <script>
-// $newGameButton.addEventListener("click", myFunction);
-
-// function newGame() {
-//     brings to game
-// }
-// </script>
+//hide answer in console so people can't cheat
+//remove already played word from foodBank
+//make blocks transparent when pressed

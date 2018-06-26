@@ -4,113 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gaegu|Homemade+Apple|Sacramento|Gloria+Hallelujah|Markazi+Text|Old+Standard+TT" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gaegu|Homemade+Apple|Sacramento|Gloria+Hallelujah|Markazi+Text|Old+Standard+TT"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <title>Hangry Disney</title>
+
 </head>
 
 <body>
-<!-- Nav Bar -->
-<div class="navbar navbar-light bg-light">
-    <h1 class="display-4">When you wish upon a shake...</h1>
-    <button id="resetButton" class="btn btn-lg btn-outline-info gamePage disappear"><i class="fas fa-gamepad fa-2x"></i></button>
-</div>
-
-<div class="wlCounter">
-    <div class="row">
-        <div class="col-6 my-2">
-            <p>Wins: <span id="wins"></span></p>
-        </div>
-
-        <div class="col-6 my-2">
-            <p>Losses: <span id="losses"></span></p>
-        </div>
+    <!-- Nav Bar -->
+    <div class="navbar navbar-light bg-light">
+        <h1 class="display-4">When you wish upon a shake...</h1>
+        <button id="resetButton" class="btn btn-lg btn-outline-info gamePage disappear">
+            <i class="fas fa-grin-stars fa-2x"></i>
+        </button>
     </div>
-</div>
-
-
-<!-- Page 1 -->
-<div class="container introPage">
-    <div id="newGameButton" class= "jumbotron-fluid background"></div>
-</div>
 
 
 
+    <!-- Page 1 -->
+    <div class="container introPage">
+        <div id="newGameButton" class="jumbotron-fluid background"></div>
+    </div>
 
 
-<!-- Page 2 -->
-<div class="container gamePage disappear">
-    <div class="row">
 
-        <!-- LEFT SIDE blank letters && the letter blocks-->
-        <div class="col-8">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">Guess the Word</div>
-                        <div class="card-body">
-                            <!-- WORD GOES HERE -->
-                            <span id="placeholders"></span>
-                        </div>
+
+
+    <!-- Page 2 -->
+    <div class="container gamePage disappear">
+        <div class="row">
+
+            <div class="wlCounter">
+                <div class="row">
+                    <div class="col-6 my-2">
+                        <p>Wins:
+                            <span id="wins"></span>
+                        </p>
+                    </div>
+
+                    <div class="col-6 my-2">
+                        <p>Losses:
+                            <span id="losses"></span>
+                        </p>
                     </div>
                 </div>
-                
+            </div>
+            <!-- LEFT SIDE blank letters && the letter blocks-->
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">Guess the Word</div>
+                            <div class="card-body">
+                                <!-- WORD GOES HERE -->
+                                <span id="placeholders"></span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">Available Letters (Type to Play!)</div>
-                        <div id="alphabetBlocks" class="card-body">
-                            <div id="a">a</div>
-                            <div id="b">b</div>
-                            <div id="c">c</div>
-                            <div id="d">d</div>
-                            <div id="e">e</div>
-                            <div id="f">f</div>
-                            <div id="g">g</div>
-                            <div id="h">h</div>
-                            <div id="i">i</div>
-                            <div id="j">j</div>
-                            <div id="k">k</div>
-                            <div id="l">l</div>
-                            <div id="m">m</div>
-                            <div id="n">n</div>
-                            <div id="o">o</div>
-                            <div id="p">p</div>
-                            <div id="q">q</div>
-                            <div id="r">r</div>
-                            <div id="s">s</div>
-                            <div id="t">t</div>
-                            <div id="u">u</div>
-                            <div id="v">v</div>
-                            <div id="w">w</div>
-                            <div id="x">x</div>
-                            <div id="y">y</div>
-                            <div id="z">z</div>
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">Available Letters (Type to Play!)</div>
+                            <div id="alphabetBlocks" class="card-body">
+                                <div id="1" class="a">a</div>
+                                <div id="2" class="b">b</div>
+                                <div id="3" class="c">c</div>
+                                <div id="4" class="d">d</div>
+                                <div id="5" class="e">e</div>
+                                <div id="6" class="f">f</div>
+                                <div id="7" class="g">g</div>
+                                <div id="8" class ="h">h</div>
+                                <div id="9" class ="i">i</div>
+                                <div id="10" class="j">j</div>
+                                <div id="11" class="k">k</div>
+                                <div id="12" class="l">l</div>
+                                <div id="13" class ="m">m</div>
+                                <div id="14" class ="n">n</div>
+                                <div id="15" class="o">o</div>
+                                <div id="16" class="p">p</div>
+                                <div id="17" class="q">q</div>
+                                <div id="18" class="r">r</div>
+                                <div id="19" class="s">s</div>
+                                <div id="20" class="t">t</div>
+                                <div id="21" class="u">u</div>
+                                <div id="22" class="v">v</div>
+                                <div id="23" class="w">w</div>
+                                <div id="24" class="x">x</div>
+                                <div id="25" class="y">y</div>
+                                <div id="26" class="z">z</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- RIGHT SIDE - Hang img -->
-        <div class="col-4 hangImgDiv">
-            <img src="assets/images/1-tigger.jpg" alt="Hangman Img" class="img-fluid">
-            <div class="livesCounter">
-                <h4>Remaining Lives: <span id="livesCount"></span></h4>
+            <!-- RIGHT SIDE - Hang img -->
+            <div class="col-4 hangImgDiv">
+                <img src="assets/images/1-tigger.jpg" alt="Hangman Img" class="img-fluid">
+                <div class="livesCounter">
+                    <h4>Remaining Lives:
+                        <span id="livesCount"></span>
+                    </h4>
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="assets/javascript/game.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
 
 
-    <script>
+    <audio autoplay> 
+        <source src="/assets/audio/jiminycricket.mp3">
+    </audio>
 
-    </script>
+
 </body>
 
 </html>
