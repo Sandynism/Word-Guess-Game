@@ -2,4 +2,7 @@
 
 Sandy Yeung
 
-Columbia University
+![](images/wordguessgamess1.png)
+
+![](images/wordguessgamess2.png)
+
