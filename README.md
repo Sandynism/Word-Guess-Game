@@ -2,7 +2,7 @@
 
 Sandy Yeung
 
-![](images/wordguessgamess1.png)
+![](assets/images/WordGuessGameSS1.png)
 
-![](images/wordguessgamess2.png)
+![](assets/images/WordGuessGameSS2.png)
 
