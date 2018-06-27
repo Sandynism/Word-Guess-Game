@@ -1,4 +1,5 @@
 // SETTINGS
+let alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
 let $word = document.getElementById('placeholders')
 let $lettersGuessed = document.getElementById('lettersGuessed')
 let $livesCount = document.getElementById('livesCount')
@@ -8,7 +9,7 @@ $wins.innerText = 0
 let $losses = document.getElementById('losses')
 $losses.innerText = 0
 
-// let foodBank = ["dole whip"]
+// let foodBank = ["dole whip", "cheese", "cat"]
 let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "cheese fries", "slushie", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
@@ -22,18 +23,26 @@ let $resetButton = document.getElementById('resetButton')
 $(document).ready(function () {
     $("#newGameButton").click(function () {
         $(".introPage").addClass("disappear")
-        $(".gamePage").removeClass("disappear") //make the counter disappear too
+        $(".gamePage").removeClass("disappear") 
     })
 })
 
-// New game
+// New Game
 function startGame() {
     letters = [];
     currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
     $livesCount.innerText = 8
     $word.innerText = hideString(currentFoodItem, letters)
+    for (let i=0; i<alphabet.length; i++) {
+        let letterClass = $(`.${alphabet[i]}`)
+        letterClass.css('opacity', '1')
+    }
     // $lettersGuessed.innerText = ""
+
+    // foodBank.splice(foodBank.indexOf(currentFoodItem), 1)
+    //not using splice because game breaks with no words left in array
+    
 }
 
 $newGameButton.addEventListener('click', () => {
@@ -46,6 +55,7 @@ $resetButton.addEventListener('click', () => {
     $wins.innerText = 0
     $losses.innerText = 0
     $livesCount.innerText = 8
+
     startGame()
 })
 
@@ -64,15 +74,13 @@ function hideString(foodString, array) {
 }
 
 function checkUserInput(input) {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
     let lowerInput = input.toLowerCase()
     let validLetter = alphabet.includes(lowerInput)
 
     if (validLetter && !letters.includes(lowerInput)) {
         letters.push(lowerInput)
     } else if (validLetter && letters.includes(lowerInput)) {
-        alert('Choose another letter!')
-        //remove alert after blocks work
+        
     }
 
     if (validLetter && !currentFoodItem.toLowerCase().includes(lowerInput)) {
@@ -92,40 +100,34 @@ function checkWinner(string, array) {
 function checkGameStatus() {
     if ($livesCount.innerHTML === "0") {
         $losses.innerText = parseInt($losses.innerText) + 1
-        alert("Womp Womp, You Lose! Play Again!") //need to make it go to 0 lives first
+        // alert("Womp Womp, You Lose! Play Again!") 
         startGame()
     }
 
     if (checkWinner(currentFoodItem, letters)) {
-        $wins.innerText = parseInt($wins.innerText) + 1//how to check if word is complete?
-        alert("Woohoo, You Won!")
+        $wins.innerText = parseInt($wins.innerText) + 1
+        // alert("Woohoo, You Won!")
         startGame()
     }
 }
 
-function changeImgDiv() {
-    if ($livesCount.innerHTML === "7") {
-        var image = document.getElementsById("disneyImg");
-        image.src = "assets/images/2-donald.jpg";
-    }
+function changeImgDiv(num) {
+    let image = document.getElementById("disneyImg");
+    image.src = `assets/images/${9 - num}.jpg`
 }
 
 document.addEventListener("keyup", (event) => {
 
+    let letterTyped = event.key
+    let letterClass = $(`.${letterTyped}`)
+    letterClass.css('opacity', '.3')
+
     checkUserInput(event.key)
     checkGameStatus()
     $word.innerText = hideString(currentFoodItem, letters)
-
-    for (let i = 0; i < 26; i++) {
-        if (event.key === document.getElementById(`${i}`)) {
-            document.getElementById(`${i}`).style.opacity = ".5";
-        }
-    }
+    changeImgDiv($livesCount.innerText)
 
 })
 
-// function endGame()
-// restart new game if player won or if lives are at 0
+
 //hide answer in console so people can't cheat
-//remove already played word from foodBank
-//make blocks transparent when pressed
