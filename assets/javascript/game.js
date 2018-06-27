@@ -34,7 +34,7 @@ function startGame() {
 
     $livesCount.innerText = 8
     $word.innerText = hideString(currentFoodItem, letters)
-    for (let i=0; i<alphabet.length; i++) {
+    for (let i = 0; i < alphabet.length; i++) {
         let letterClass = $(`.${alphabet[i]}`)
         letterClass.css('opacity', '1')
     }
@@ -43,7 +43,7 @@ function startGame() {
 
     // foodBank.splice(foodBank.indexOf(currentFoodItem), 1)
     //not using splice because game breaks with no words left in array
-    
+
 }
 
 $newGameButton.addEventListener('click', () => {
@@ -66,7 +66,7 @@ function hideString(foodString, array) {
         if (array.includes(foodString[i])) {
             finalWord += foodString[i]
         } else if (foodString[i] === " ") {
-            finalWord += "  "
+            finalWord += " "
         } else {
             finalWord += "_"
         }
@@ -91,6 +91,7 @@ function checkUserInput(input) {
 
 function checkWinner(string, array) {
     for (let i = 0; i < string.length; i++) {
+        if (string[i] === " ") continue
         if (!array.includes(string[i])) {
             return false
         }
@@ -132,3 +133,5 @@ document.addEventListener("keyup", (event) => {
 
 
 //hide answer in console so people can't cheat
+//need to add win and lose stuff
+//why doesnt my win reset itself?
