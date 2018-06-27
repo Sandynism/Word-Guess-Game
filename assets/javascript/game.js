@@ -38,6 +38,7 @@ function startGame() {
         let letterClass = $(`.${alphabet[i]}`)
         letterClass.css('opacity', '1')
     }
+    changeImgDiv()
     // $lettersGuessed.innerText = ""
 
     // foodBank.splice(foodBank.indexOf(currentFoodItem), 1)
@@ -111,9 +112,9 @@ function checkGameStatus() {
     }
 }
 
-function changeImgDiv(num) {
+function changeImgDiv() {
     let image = document.getElementById("disneyImg");
-    image.src = `assets/images/${9 - num}.jpg`
+    image.src = `assets/images/${$livesCount.innerText}.jpg`
 }
 
 document.addEventListener("keyup", (event) => {
@@ -125,7 +126,7 @@ document.addEventListener("keyup", (event) => {
     checkUserInput(event.key)
     checkGameStatus()
     $word.innerText = hideString(currentFoodItem, letters)
-    changeImgDiv($livesCount.innerText)
+    changeImgDiv()
 
 })
 
