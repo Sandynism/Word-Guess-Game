@@ -9,7 +9,7 @@ $wins.innerText = 0
 let $losses = document.getElementById('losses')
 $losses.innerText = 0
 
-// let foodBank = ["dole whip", "cheese", "cat"]
+// let foodBank = ["dole whip", "cheese", "cat"] (tester array)
 let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "curly fries", "hamburger", "ice cream sundae", "milkshake", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
@@ -20,6 +20,7 @@ let $introPage = document.getElementById('introPage')
 let $resetButton = document.getElementById('resetButton')
 
 
+//hide the intro page when new game button is pressed
 $(document).ready(function () {
     $("#newGameButton").click(function () {
         $(".introPage").addClass("disappear")
@@ -27,7 +28,7 @@ $(document).ready(function () {
     })
 })
 
-// New Game
+// start game
 function startGame() {
     letters = [];
     currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
@@ -46,12 +47,14 @@ function startGame() {
 
 }
 
+// on click enter game page button
 $newGameButton.addEventListener('click', () => {
     startGame()
     let audio = new Audio("assets/audio/jiminycricket.mp3")
     audio.play()
 })
 
+//on click reset game button
 $resetButton.addEventListener('click', () => {
     $wins.innerText = 0
     $losses.innerText = 0
@@ -60,6 +63,7 @@ $resetButton.addEventListener('click', () => {
     startGame()
 })
 
+//turns the random word into a _ string
 function hideString(foodString, array) {
     let finalWord = ""
     for (let i = 0; i < foodString.length; i++) {
@@ -74,6 +78,7 @@ function hideString(foodString, array) {
     return finalWord
 }
 
+//checks if input is part of alphabet & lowercases
 function checkUserInput(input) {
     let lowerInput = input.toLowerCase()
     let validLetter = alphabet.includes(lowerInput)
@@ -89,6 +94,7 @@ function checkUserInput(input) {
     }
 }
 
+//checks if the word is complete & allows a win without the space for multi word strings
 function checkWinner(string, array) {
     for (let i = 0; i < string.length; i++) {
         if (string[i] === " ") continue
@@ -99,6 +105,7 @@ function checkWinner(string, array) {
     return true
 }
 
+//increases score for wins or losses
 function checkGameStatus() {
     if ($livesCount.innerHTML === "0") {
         $losses.innerText = parseInt($losses.innerText) + 1
@@ -113,11 +120,13 @@ function checkGameStatus() {
     }
 }
 
+//updates the 'hangman' image
 function changeImgDiv() {
     let image = document.getElementById("disneyImg");
     image.src = `assets/images/${$livesCount.innerText}.jpg`
 }
 
+//checks user input to fade typed letters 
 document.addEventListener("keyup", (event) => {
 
     let letterTyped = event.key

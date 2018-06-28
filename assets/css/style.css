@@ -39,12 +39,9 @@ body {
 }
 
 .wlCounter {
-    /* position: absolute;
-    top: 20%; */
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     border-radius: 15px;
-    /* margin-top: 10px; */
     font-family: "Gaegu";
     font-size: 35px;
     letter-spacing: 2px;
@@ -72,7 +69,7 @@ body {
 }
 
 
-/* hangman Img */
+/* Hangman Image */
 .hangImgDiv {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
@@ -96,7 +93,7 @@ body {
 }
 
 
-/* 2 cards next to hangman */
+/* Alphabet blocks & word guess next to hangman */
 .card {
     margin: 20px auto;
 }
