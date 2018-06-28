@@ -18,7 +18,9 @@ let $newGameButton = document.getElementById('newGameButton')
 let $gamePage = document.getElementById('gamePage')
 let $introPage = document.getElementById('introPage')
 let $resetButton = document.getElementById('resetButton')
-
+//Sound Effects
+let winSound = new Audio("assets/audio/tiggerwin.mp3")
+let loseSound = new Audio("assets/audio/poohloses.mp3")
 
 //hide the intro page when new game button is pressed
 $(document).ready(function () {
@@ -28,7 +30,7 @@ $(document).ready(function () {
     })
 })
 
-// start game
+// START GAME
 function startGame() {
     letters = [];
     currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
@@ -47,14 +49,14 @@ function startGame() {
 
 }
 
-// on click enter game page button
+// ON CLICK ENTER GAME PAGE
 $newGameButton.addEventListener('click', () => {
     startGame()
     let audio = new Audio("assets/audio/jiminycricket.mp3")
     audio.play()
 })
 
-//on click reset game button
+//ON CLICK RESET BUTTON 
 $resetButton.addEventListener('click', () => {
     $wins.innerText = 0
     $losses.innerText = 0
@@ -63,7 +65,7 @@ $resetButton.addEventListener('click', () => {
     startGame()
 })
 
-//turns the random word into a _ string
+//Turns the random word into a _ string
 function hideString(foodString, array) {
     let finalWord = ""
     for (let i = 0; i < foodString.length; i++) {
@@ -78,7 +80,7 @@ function hideString(foodString, array) {
     return finalWord
 }
 
-//checks if input is part of alphabet & lowercases
+//Checks if input is part of alphabet & lowercases
 function checkUserInput(input) {
     let lowerInput = input.toLowerCase()
     let validLetter = alphabet.includes(lowerInput)
@@ -94,7 +96,7 @@ function checkUserInput(input) {
     }
 }
 
-//checks if the word is complete & allows a win without the space for multi word strings
+//Checks if the word is complete & allows a win without the space for multi word strings
 function checkWinner(string, array) {
     for (let i = 0; i < string.length; i++) {
         if (string[i] === " ") continue
@@ -105,28 +107,30 @@ function checkWinner(string, array) {
     return true
 }
 
-//increases score for wins or losses
+//Increases score for wins or losses
 function checkGameStatus() {
     if ($livesCount.innerHTML === "0") {
         $losses.innerText = parseInt($losses.innerText) + 1
         // alert("Womp Womp, You Lose! Play Again!") 
+        loseSound.play()
         startGame()
     }
 
     if (checkWinner(currentFoodItem, letters)) {
         $wins.innerText = parseInt($wins.innerText) + 1
         // alert("Woohoo, You Won!")
+        winSound.play()
         startGame()
     }
 }
 
-//updates the 'hangman' image
+//Updates the Hangman image
 function changeImgDiv() {
     let image = document.getElementById("disneyImg");
     image.src = `assets/images/${$livesCount.innerText}.jpg`
 }
 
-//checks user input to fade typed letters 
+//Checks user input to fade typed letters 
 document.addEventListener("keyup", (event) => {
 
     let letterTyped = event.key
@@ -142,6 +146,5 @@ document.addEventListener("keyup", (event) => {
 
 
 //hide answer in console so people can't cheat
-//need to add win and lose stuff (maybe a cheers sound?)
 //will using .on('click) help load quicker?
 
