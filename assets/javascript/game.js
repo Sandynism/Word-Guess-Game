@@ -10,7 +10,7 @@ let $losses = document.getElementById('losses')
 $losses.innerText = 0
 
 // let foodBank = ["dole whip", "cheese", "cat"]
-let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "cheese fries", "slushie", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
+let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "curly fries", "hamburger", "ice cream sundae", "milkshake", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
 let letters = []
@@ -133,5 +133,6 @@ document.addEventListener("keyup", (event) => {
 
 
 //hide answer in console so people can't cheat
-//need to add win and lose stuff
+//need to add win and lose stuff (maybe a cheers sound?)
 //will using .on('click) help load quicker?
+
