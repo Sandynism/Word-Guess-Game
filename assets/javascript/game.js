@@ -134,4 +134,4 @@ document.addEventListener("keyup", (event) => {
 
 //hide answer in console so people can't cheat
 //need to add win and lose stuff
-//why doesnt my win reset itself?
+//will using .on('click) help load quicker?
