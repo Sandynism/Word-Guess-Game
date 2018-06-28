@@ -10,7 +10,7 @@ let $losses = document.getElementById('losses')
 $losses.innerText = 0
 
 // let foodBank = ["dole whip", "cheese", "cat"] (tester array)
-let foodBank = ["dole whip", "dipping dots", "corn dog", "fried oreos", "curly fries", "hamburger", "ice cream sundae", "milkshake", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese"]
+let foodBank = ["dole whip", "dipping dots", "key lime pie", "mickey bars", "corn dog", "shrimp n grits", "fried oreos", "poutine", "cheeseburger", "ice cream sundae", "milkshake", "chicken tenders", "churros", "turkey leg", "candy apple", "beignets", "mac n cheese", "kettlecorn"]
 let currentFoodItem = foodBank[Math.floor(Math.random() * foodBank.length)];
 
 let letters = []
@@ -44,8 +44,9 @@ function startGame() {
     changeImgDiv()
     // $lettersGuessed.innerText = ""
 
-    // foodBank.splice(foodBank.indexOf(currentFoodItem), 1)
-    //not using splice because game breaks with no words left in array
+    foodBank.splice(foodBank.indexOf(currentFoodItem), 1)
+    //game breaks with no words left in array
+    //add reset for foodBank
 
 }
 
